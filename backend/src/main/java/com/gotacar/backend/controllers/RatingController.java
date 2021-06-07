@@ -104,7 +104,7 @@ public class RatingController {
 	 * 
 	 * @param lista de usuarios de un viaje
 	 */
-	@PreAuthorize("hasRole('ROLE_CLIENT')")
+	@PreAuthorize("hasRole('ROLE_CLIENT') || hasRole('ROLE_ADMIN')")
 	@PostMapping(path = "/rate/check", consumes = "application/json")
 	public List<String> rateCheck(@RequestBody() String body) {
 		try {
